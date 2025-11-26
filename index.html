@@ -192,7 +192,10 @@
           <div class="column is-four-fifths">
             <h2 class="title is-3">Example</h2>
             <div class="content has-text-justified">
-              <img src="static/images/ex_annotation_picture.png" alt="ex_annotation" class="center">
+              <!-- <img src="static/images/ex_annotation_picture.png" alt="ex_annotation" class="center" style="width: 110%; max-width: 110%;"> -->
+              <div style="text-align: center;">
+                <img src="static/images/ex_annotation_picture.png" alt="ex_annotation" style="width: 110%; max-width: 110%;">
+              </div>              
               <br>
               <p>
                 <b>Examples of hallucinated sentences in AlignBench.</b>
@@ -281,7 +284,32 @@
       </section>
       <section class="section">
         <div class="container">
-      
+
+          <div class="columns is-centered has-text-centered"  style="margin-top: 3em;">
+            <div class="column is-four-fifths">
+              <h2 class="title is-3">Comparison to existing datasets</h2>
+              <div class="content has-text-justified">
+                <img src="static/images/comparison.png" alt="algebraic reasoning" class="center">
+                <p>
+                  <b>Comparison to existing datasets for hallucination detection and compositionality understanding (AUROC). </b> Results of prior benchmarks that exceed AlignBench are highlighted. 
+                </p>
+              </div>
+              <div style="max-width: 80%; margin: 2em auto; padding: 1em 1.2em; border-left: 4px solid #ff8484; background: #fff8f8; border-radius: 6px;">
+                <p style="margin: 0 0 .6em; font-weight: 600; text-align: left;">
+                  <i class="fa-solid fa-pen-to-square" style="color:#ff8484; margin-right: .4em;"></i>
+                  Key Points
+                </p>
+                <ul style="margin: 0; padding-left: 1.4em; text-align: left; line-height: 1.6; list-style-type: disc;">
+                  <li>AlignBench serves as a new indicator of an image-text alignment capability. </li>
+                  <li>Strong performance on short and simple sentences does not translate to the longer and more diverse sentences in AlignBench.</li>
+                  <li>Llama-4, which performs well on AlignBench, consistently shows strong results on these prior benchmarks, indicating that AlignBench better captures the broader alignment capabilities required across datasets. </li>
+                </ul>
+              </div>
+              
+          
+            </div>
+          </div>
+
           <!-- RESULTS -->
           <div class="columns is-centered has-text-centered"  style="margin-top: 3em;">
             <div class="column is-four-fifths">
@@ -311,7 +339,7 @@
             <div class="column is-four-fifths">
               <h2 class="title is-3">Positional bias</h2>
               <div class="content has-text-justified">
-                <img src="static/images/position.png" alt="algebraic reasoning" class="center">
+                <img src="static/images/position.png" alt="algebraic reasoning" class="center" style="width: 110%; max-width: 110%;">
                 <p>
                   <b>Detectors show positional bias in scoring.</b> We average the detectors’ correctness scores (Y-axis) by sentence position (X-axis) and visualize the results using GPT-4o (Left) and Llama-4 (Right) as detectors. Both detectors assign higher scores to sentences appearing near the beginning of the output. The detector is not provided with any positional information during inference.
                 </p>
@@ -357,7 +385,7 @@
             <div class="column is-four-fifths">
               <h2 class="title is-3">For own hallucination</h2>
               <div class="content has-text-justified">
-                <img src="static/images/self_pref.png" alt="algebraic reasoning" class="center">
+                <img src="static/images/self_pref.png" alt="algebraic reasoning" class="center" style="width: 70%; max-width: 70%;">
                 <p>
                   Detectors struggle to detect their own hallucination. <b>Left: Self- and cross-evaluation results. AUROC scores for each Captioner (columns), normalized by the average AUROC of each Detector (rows).</b> Diagonal entries show self-evaluation. <b>Right: We pick GPT-4o as a detector, with their output correctness scores averaged by sentence position. </b>Blue and red lines show scores for correct and incorrect GPT-4o’s outputs; green shows scores for incorrect Llama-4 outputs.
                 </p>
